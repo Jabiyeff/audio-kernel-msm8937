@@ -23,6 +23,10 @@ ifeq ($(CONFIG_ARCH_SDM429), y)
 include $(srctree)/techpack/audio/config/sdm450auto.conf
 export $(shell sed 's/=.*//' $(srctree)/techpack/audio/config/sdm450auto.conf)
 endif
+ifeq ($(CONFIG_MACH_XIAOMI_SANTONI), y)
+CONFIG_SND_SOC_AW87319=y
+export
+endif
 ifeq ($(CONFIG_ARCH_SDXPOORWILLS), y)
 include $(srctree)/techpack/audio/config/sdxpoorwillsauto.conf
 export $(shell sed 's/=.*//' $(srctree)/techpack/audio/config/sdxpoorwillsauto.conf)
